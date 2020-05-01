@@ -1,0 +1,64 @@
+@mixin bg($image, $position, $repeat, $color) {
+  background: url('/img/#{$image}') $position $repeat $color;
+}
+
+@mixin bg-image($image, $position, $repeat, $color) {
+  background-image: url('/img/#{$image}');
+}
+
+@mixin clear() {
+  content: '';
+  display: table;
+  overflow: hidden;
+  clear: both;
+}
+
+@mixin full-block() {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin position-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin grid-offset($offsetX, $offsetY: false) {
+  > .row {
+    margin-left: -$offsetX;
+    margin-right: -$offsetX;
+    @if ($offsetY) {
+      margin-top: -$offsetY;
+      margin-bottom: -$offsetY;
+    }
+
+    > .col,
+    > [class*="col-"] {
+      padding-left: $offsetX;
+      padding-right: $offsetX;
+      @if ($offsetY) {
+        padding-top: $offsetY;
+        padding-bottom: $offsetY;
+      }
+    }
+  }
+}
+
+@mixin hover() {
+  &:hover {
+    @media screen and (min-width: 992px) {
+      @content;
+    }
+  }
+}
+
+@mixin media($value, $type: 'min') {
+  @media screen and (#{$type}-width: $value) {
+    @content;
+  }
+}

@@ -1,0 +1,106 @@
+@import "mixins";
+@import "variables";
+@import "~bootstrap/scss/bootstrap-grid";
+@import "~lightgallery/src/sass/lightgallery";
+@import "~swiper/swiper";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  width: 100%;
+  line-height: 1.2;
+  font-family: $font-stack;
+  font-size: 16px;
+  color: $black;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  line-height: 0;
+  max-width: 100%;
+  border: 0;
+}
+
+a {
+  text-decoration: underline;
+  color: $black;
+  transition: opacity 300ms;
+
+  @include hover {
+    text-decoration: none;
+    opacity: .7;
+  }
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: normal;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+input[type=search] {
+  -webkit-appearance: none;
+
+  &::-ms-clear,
+  &::-ms-reveal {
+    display: none;
+  }
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.position-relative {
+  position: relative;
+}
